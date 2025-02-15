@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Dropdown HW</title>
+  </head>
+  <body>
+    <!-- 1 -->
+    <label>Choose a season:</label>
+    <select id="weatherSelect">
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+      <option value="winter">Winter</option>
+    </select>
+    <button id="weatherButton">Display Typical Weather</button>
+    <p id="weatherResult"></p>
+
+    <!-- 2 -->
+    <label>Choose a movie genre:</label>
+    <select id="languageSelect">
+      <option value="scienceFiction">Science Fiction</option>
+      <option value="mystery">Mystery</option>
+      <option value="romance">Romance</option>
+    </select>
+    <button id="movieButton">Display Movie Reccomendation</button>
+    <p id="movieResult"></p>
+
+    <!-- 3 -->
+    <label>Choose a pet:</label>
+    <select id="petType">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="fish">Fish</option>
+    </select>
+    <button id="petButton">Display Planet Fact</button>
+    <p id="petResult"></p>
+
+    <!-- 4 -->
+    <label>Choose a musical instrument:</label>
+    <select id="musicalInstrument">
+      <option value="guitar">Guitar</option>
+      <option value="piano">Piano</option>
+      <option value="violin">Violin</option>
+    </select>
+    <p id="musicResult"></p>
+
+    <!-- 5 -->
+    <label>Choose a planet:</label>
+    <select id="planetType">
+      <option value="earth">Earth</option>
+      <option value="mars">Mars</option>
+      <option value="jupiter">Jupiter</option>
+    </select>
+    <button id="planetButton">Display Planet Fact</button>
+    <p id="planetResult"></p>
+
+    <script>
+      // 1
+      const weatherSelect = document.getElementById("weatherSelect");
+      const weatherButton = document.getElementById("weatherButton");
+      const weatherResult = document.getElementById("weatherResult");
+
+      weatherButton.addEventListener("click", function () {
+        const weatherInfo = {
+          summer: `Typical weather: Hot temperatures and sunny days`,
+          fall: `Typical weather: Cooler temperatures and falling leaves`,
+          winter: `Typical weather: Cold temperatures and snowfall`,
+          spring: `Typical weather: Mild temperatures and blooming flowers`,
+        };
+
+        weatherResult.textContent = weatherInfo[weatherSelect.value];
+      });
+
+      // 2
+      const languageSelect = document.getElementById("languageSelect");
+      const movieButton = document.getElementById("movieButton");
+      const movieResult = document.getElementById("movieResult");
+
+      movieButton.addEventListener("click", function () {
+        const movieRecommendations = {
+          romance: `Movie recommendation: Pride and Prejudice`,
+          mystery: `Movie recommendation: Gone Girl`,
+          scienceFiction: `Movie recommendation: Dune`,
+        };
+
+        movieResult.textContent = movieRecommendations[languageSelect.value];
+      });
+
+      // 3
+      const petType = document.getElementById("petType");
+      const petButton = document.getElementById("petButton");
+      const petResult = document.getElementById("petResult");
+
+      petButton.addEventListener("click", function () {
+        const petFacts = {
+          dog: `Fun fact: Dogs are known for their loyalty and companionship`,
+          cat: `Fun fact: Cats are independent and can be very playful`,
+          fish: `Fun fact: Fish are the most diverse group of vertebrates`,
+        };
+
+        petResult.textContent = petFacts[petType.value];
+      });
+
+      // 4
+      const musicalInstrument = document.getElementById("musicalInstrument");
+      const musicResult = document.getElementById("musicResult");
+
+      musicalInstrument.addEventListener("change", function () {
+        const instrumentSounds = {
+          guitar: `Sound: The guitar produces melodic tones with its strings.`,
+          piano: `Sound: The piano creates harmonious music through its keys.`,
+          violin: `Sound: The violin produces sweet and expressive sound.`,
+        };
+
+        musicResult.textContent = instrumentSounds[musicalInstrument.value];
+      });
+
+      //5
+
+      const planetType = document.getElementById("planetType");
+      const planetButton = document.getElementById("planetButton");
+      const planetResult = document.getElementById("planetResult");
+
+      planetButton.addEventListener("click", function () {
+        const planetFacts = {
+          earth: `Planet fact: Earth is the only known planet with life.`,
+          mars: `Planet fact: Mars is often called the 'Red Planet' due to its color.`,
+          jupiter: `Planet fact: Jupiter is the largest planet in our solar system.`,
+        };
+
+        planetResult.textContent = planetFacts[planetType.value];
+      });
+    </script>
+  </body>
+</html>
